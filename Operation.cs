@@ -30,22 +30,29 @@ namespace Calculator
             return this;
         } 
         /*Доделать*/
-        public string[] GetSubTypeName()
+        public string GetSubTypeName(int i = 0)
         {
-            string[] str = new string[2];
-                switch (FirstSub)
-                {
-                    case "":
-                        return "+";
-                    case TypeOfOperation.Minus:
-                        return "-";
-                    case TypeOfOperation.Multiply:
-                        return "*";
-                    case TypeOfOperation.Drob:
-                        return "/";
-                    default:
-                        return "";
-                }
+            SubOperations op;
+            if (i == 0)
+                op = FirstSub;
+            else
+                op = SecondSub;
+            switch (op)
+            {
+                case SubOperations.Sin:
+                    return "sin";
+                case SubOperations.Cos:
+                    return "cos";
+                case SubOperations.Tg:
+                    return "tg";
+                case SubOperations.Ctg:
+                    return "ctg";
+                case SubOperations.Pow:
+                    return "pow";
+                case SubOperations.Sqrt:
+                    return "sqrt";
+                default: return "";
+            }
         }
         public string GetTypeName()
         {
@@ -68,6 +75,29 @@ namespace Calculator
             {
                 return "";
             }
+        }
+        public string GetStrResult()
+        {
+            if (FirstSub != Operation.SubOperations.NULL && SecondSub == Operation.SubOperations.NULL)
+            {
+                return $"{GetSubTypeName()}({FirstNum}){GetTypeName()}{SecondNum}";
+            }
+            else if (FirstSub == Operation.SubOperations.NULL && SecondSub != Operation.SubOperations.NULL)
+            {
+                return $"{FirstNum}{GetTypeName()}{GetSubTypeName(1)}({SecondNum})";
+            }
+            else if (FirstSub != Operation.SubOperations.NULL && SecondSub != Operation.SubOperations.NULL)
+            {
+                return $"{GetSubTypeName()}({FirstNum}){GetTypeName()}{GetSubTypeName(1)}({SecondNum})";
+            }
+            else
+            {
+                return $"{FirstNum}{GetTypeName()}{SecondNum}";
+            }
+        }
+        public override string ToString()
+        {
+            return $"{GetStrResult()}={Result}";
         }
     }
 }

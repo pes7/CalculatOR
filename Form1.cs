@@ -12,12 +12,14 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
+        private List<Operation> Operations;
+        private Operation top; // This Operation
+
         public Form1()
         {
             InitializeComponent();
+            Operations = new List<Operation>();
         }
-
-        private Operation top; // This Operation
 
         private void ButOperator(object sender, EventArgs e)
         {
@@ -25,7 +27,6 @@ namespace Calculator
             if(top == null)
             {
                 top = new Operation();
-                DrowOptional();
             }
             if(top.Type == Operation.TypeOfOperation.NULL)
             {
@@ -37,6 +38,7 @@ namespace Calculator
                 Result.Text += bt.Text;
                 top.SecondNum += bt.Text;
             }
+            DrowOptional();
         }
 
         private void OperationsOperator(object sender, EventArgs e)
@@ -96,16 +98,23 @@ namespace Calculator
 
         private void GetResult(object sender, EventArgs e)
         {
-            if(top != null)
+            if(top != null && top.FirstNum != null && top.SecondNum != null && top.Type != Operation.TypeOfOperation.NULL)
             {
                 Result.Text = $"Result: {top.GetResult().Result}";
-                listBox1.Items.Add($"{top.FirstNum}{top.GetTypeName()}{top.SecondNum}={top.Result}");
+                Operation oper = new Operation(top.FirstNum, top.SecondNum, top.Type, top.FirstSub, top.SecondSub);
+                oper.Result = top.Result;
+                Operations.Insert(0, oper);
+                ResultList.Items.Insert(0, top);
                 AutorPanel.SendToBack();
-                top = null;
+                top.FirstNum = top.Result.ToString();
+                top.FirstSub = Operation.SubOperations.NULL;
+                top.SecondSub = Operation.SubOperations.NULL;
+                top.SecondNum = "";
+                top.Type = Operation.TypeOfOperation.NULL;
             }
             else
             {
-                MessageBox.Show("Введите число.");
+                MessageBox.Show("Ошибка.");
                 return;
             }
         }
@@ -137,7 +146,40 @@ namespace Calculator
         private void DrowOptional()
         {
             if(top != null)
-                Result.Text = $"{top.FirstNum}{top.GetTypeName()}{top.SecondNum}";
+            {
+                Result.Text = top.GetStrResult();
+            }
+        }
+
+        private void listBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Clipboard.SetText(Operations[ResultList.SelectedIndex].Result.ToString());
+            }catch(Exception ex)
+            {
+
+            }
+        }
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (top.Type == Operation.TypeOfOperation.NULL)
+                    top = new Operation(Operations[ResultList.SelectedIndex].Result.ToString());
+                else
+                    top.SecondNum = Operations[ResultList.SelectedIndex].Result.ToString();
+                DrowOptional();
+            }catch(Exception ex)
+            {
+
+            }
+        }
+
+        private void CatImage_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Да, да, pes7 это я - Назар Уколов.");
         }
     }
 }
