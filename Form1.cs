@@ -63,9 +63,35 @@ namespace Calculator
                     case "*":
                         top.Type = Operation.TypeOfOperation.Multiply;
                         break;
+                    case "sin":
+                        AddSubOp(Operation.SubOperations.Sin);
+                        break;
+                    case "cos":
+                        AddSubOp(Operation.SubOperations.Cos);
+                        break;
+                    case "tg":
+                        AddSubOp(Operation.SubOperations.Tg);
+                        break;
+                    case "ctg":
+                        AddSubOp(Operation.SubOperations.Ctg);
+                        break;
+                    case "x^2":
+                        AddSubOp(Operation.SubOperations.Pow);
+                        break;
+                    case "sqrt":
+                        AddSubOp(Operation.SubOperations.Sqrt);
+                        break;
                 }
                 DrowOptional();
             }
+        }
+
+        private void AddSubOp(Operation.SubOperations sub)
+        {
+            if (top.Type == Operation.TypeOfOperation.NULL)
+                top.FirstSub = sub;
+            else
+                top.SecondSub = sub;
         }
 
         private void GetResult(object sender, EventArgs e)
