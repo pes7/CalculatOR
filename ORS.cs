@@ -15,18 +15,22 @@ namespace Calculator
                 switch (op.Type)
                 {
                     case Operation.TypeOfOperation.Plus:
-                        op.Result = Plus(op);
+                        op.Result = Plus(op).ToString();
                         break;
                     case Operation.TypeOfOperation.Minus:
-                        op.Result = Minus(op);
+                        op.Result = Minus(op).ToString();
                         break;
                     case Operation.TypeOfOperation.Drob:
-                        op.Result = Drob(op);
+                        op.Result = Drob(op).ToString();
                         break;
                     case Operation.TypeOfOperation.Multiply:
-                        op.Result = Multiply(op);
+                        op.Result = Multiply(op).ToString();
                         break;
                 }
+            }
+            if (op.FirstSub != Operation.SubOperations.NULL)
+            {
+                op.Result = SubOperation(Double.Parse(op.FirstNum), op.FirstSub).ToString();
             }
             return op;
         }
@@ -47,6 +51,10 @@ namespace Calculator
                     return Math.Tan(i);
                 case Operation.SubOperations.Ctg:
                     return 1f / Math.Tan(i);
+                case Operation.SubOperations.Pow:
+                    return Math.Pow(i, 2);
+                case Operation.SubOperations.Sqrt:
+                    return Math.Sqrt(i);
                 default: return i;
             }
         }

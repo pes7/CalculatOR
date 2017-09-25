@@ -24,7 +24,7 @@ namespace Calculator
         private void ButOperator(object sender, EventArgs e)
         {
             Button bt = sender as Button;
-            if(top == null)
+            if (top == null || (top.Result != null && top.Type == Operation.TypeOfOperation.NULL))
             {
                 top = new Operation();
             }
@@ -101,22 +101,32 @@ namespace Calculator
             if(top != null && top.FirstNum != null && top.SecondNum != null && top.Type != Operation.TypeOfOperation.NULL)
             {
                 Result.Text = $"Result: {top.GetResult().Result}";
-                Operation oper = new Operation(top.FirstNum, top.SecondNum, top.Type, top.FirstSub, top.SecondSub);
-                oper.Result = top.Result;
-                Operations.Insert(0, oper);
-                ResultList.Items.Insert(0, top);
-                AutorPanel.SendToBack();
-                top.FirstNum = top.Result.ToString();
-                top.FirstSub = Operation.SubOperations.NULL;
-                top.SecondSub = Operation.SubOperations.NULL;
-                top.SecondNum = "";
-                top.Type = Operation.TypeOfOperation.NULL;
+                AddInterface();
+            }
+            else if (top != null && top.FirstNum != null && top.FirstSub != Operation.SubOperations.NULL)
+            {
+                Result.Text = $"Result: {top.GetResult().Result}";
+                AddInterface();
             }
             else
             {
                 MessageBox.Show("Ошибка.");
                 return;
             }
+        }
+
+        private void AddInterface()
+        {
+            Operation oper = new Operation(top.FirstNum, top.SecondNum, top.Type, top.FirstSub, top.SecondSub);
+            oper.Result = top.Result;
+            Operations.Insert(0, oper);
+            ResultList.Items.Insert(0, top);
+            AutorPanel.SendToBack();
+            top.FirstNum = top.Result.ToString();
+            top.FirstSub = Operation.SubOperations.NULL;
+            top.SecondSub = Operation.SubOperations.NULL;
+            top.SecondNum = "";
+            top.Type = Operation.TypeOfOperation.NULL;
         }
 
         private void cls(object sender, EventArgs e)

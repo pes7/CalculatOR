@@ -15,7 +15,7 @@ namespace Calculator
         public SubOperations FirstSub { get; set; }
         public string SecondNum { get; set; }
         public SubOperations SecondSub { get; set; }
-        public double Result { get; set; }
+        public string Result { get; set; }
         public Operation(string first = null, string second = null, TypeOfOperation type = TypeOfOperation.NULL, SubOperations sub1 = SubOperations.NULL, SubOperations sub2 = SubOperations.NULL)
         {
             Type = type;
