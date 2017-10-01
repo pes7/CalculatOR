@@ -168,7 +168,7 @@ namespace Calculator
                 Clipboard.SetText(Operations[ResultList.SelectedIndex].Result.ToString());
             }catch(Exception ex)
             {
-
+                Console.WriteLine("Clipboard Error.");
             }
         }
 
@@ -176,14 +176,17 @@ namespace Calculator
         {
             try
             {
-                if (top.Type == Operation.TypeOfOperation.NULL)
-                    top = new Operation(Operations[ResultList.SelectedIndex].Result.ToString());
-                else
-                    top.SecondNum = Operations[ResultList.SelectedIndex].Result.ToString();
+                if (top != null)
+                {
+                    if (top.Type == Operation.TypeOfOperation.NULL)
+                        top = new Operation(Operations[ResultList.SelectedIndex].Result.ToString());
+                    else
+                        top.SecondNum = Operations[ResultList.SelectedIndex].Result.ToString();
+                } else top = new Operation(Operations[ResultList.SelectedIndex].Result.ToString());
                 DrowOptional();
             }catch(Exception ex)
             {
-
+                Console.WriteLine("DoubleClick Error.");
             }
         }
 
