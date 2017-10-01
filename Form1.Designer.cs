@@ -52,6 +52,8 @@
             this.MultiplayerBtn = new System.Windows.Forms.Button();
             this.DrobBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.AutorPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.CatImage = new System.Windows.Forms.PictureBox();
@@ -60,14 +62,12 @@
             this.Result = new System.Windows.Forms.Label();
             this.del = new System.Windows.Forms.Button();
             this.ResultList = new System.Windows.Forms.ListBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.AutorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CatImage)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // number1
@@ -228,7 +228,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.Lime;
             this.button1.Location = new System.Drawing.Point(3, 83);
             this.button1.Name = "button1";
@@ -392,6 +392,38 @@
             this.panel1.Size = new System.Drawing.Size(427, 163);
             this.panel1.TabIndex = 5;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.CtgBtn);
+            this.panel3.Controls.Add(this.TgBtn);
+            this.panel3.Controls.Add(this.Sqrt);
+            this.panel3.Controls.Add(this.PowBtn);
+            this.panel3.Controls.Add(this.CosBtn);
+            this.panel3.Controls.Add(this.SinBtn);
+            this.panel3.Location = new System.Drawing.Point(166, 1);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(132, 164);
+            this.panel3.TabIndex = 7;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.number1);
+            this.panel4.Controls.Add(this.number9);
+            this.panel4.Controls.Add(this.number8);
+            this.panel4.Controls.Add(this.number0);
+            this.panel4.Controls.Add(this.number7);
+            this.panel4.Controls.Add(this.number3);
+            this.panel4.Controls.Add(this.number6);
+            this.panel4.Controls.Add(this.number5);
+            this.panel4.Controls.Add(this.KomaBtn);
+            this.panel4.Controls.Add(this.number2);
+            this.panel4.Controls.Add(this.number4);
+            this.panel4.Location = new System.Drawing.Point(43, 1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(121, 161);
+            this.panel4.TabIndex = 8;
+            // 
             // AutorPanel
             // 
             this.AutorPanel.Controls.Add(this.label2);
@@ -487,38 +519,6 @@
             this.ResultList.Click += new System.EventHandler(this.listBox1_Click);
             this.ResultList.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.CtgBtn);
-            this.panel3.Controls.Add(this.TgBtn);
-            this.panel3.Controls.Add(this.Sqrt);
-            this.panel3.Controls.Add(this.PowBtn);
-            this.panel3.Controls.Add(this.CosBtn);
-            this.panel3.Controls.Add(this.SinBtn);
-            this.panel3.Location = new System.Drawing.Point(166, 1);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(132, 164);
-            this.panel3.TabIndex = 7;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.number1);
-            this.panel4.Controls.Add(this.number9);
-            this.panel4.Controls.Add(this.number8);
-            this.panel4.Controls.Add(this.number0);
-            this.panel4.Controls.Add(this.number7);
-            this.panel4.Controls.Add(this.number3);
-            this.panel4.Controls.Add(this.number6);
-            this.panel4.Controls.Add(this.number5);
-            this.panel4.Controls.Add(this.KomaBtn);
-            this.panel4.Controls.Add(this.number2);
-            this.panel4.Controls.Add(this.number4);
-            this.panel4.Location = new System.Drawing.Point(43, 1);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(121, 161);
-            this.panel4.TabIndex = 8;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -540,12 +540,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CalculatOR";
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.AutorPanel.ResumeLayout(false);
             this.AutorPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CatImage)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

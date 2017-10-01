@@ -16,3 +16,12 @@ C:\Users\ukolo\OneDrive\Документы\GitHub\CalculatOR\obj\Debug\Calculato
 C:\Users\ukolo\OneDrive\Документы\GitHub\CalculatOR\obj\Debug\Calculator.csproj.GenerateResource.Cache
 C:\Users\ukolo\OneDrive\Документы\GitHub\CalculatOR\bin\Debug\Calculator.exe
 C:\Users\ukolo\OneDrive\Документы\GitHub\CalculatOR\bin\Debug\Calculator.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\Calculator\CalculatOR1\bin\Debug\Calculator.exe.config
+C:\Users\user\Documents\Visual Studio 2017\Projects\Calculator\CalculatOR1\bin\Debug\Calculator.exe
+C:\Users\user\Documents\Visual Studio 2017\Projects\Calculator\CalculatOR1\bin\Debug\Calculator.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\Calculator\CalculatOR1\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\Calculator\CalculatOR1\obj\Debug\Calculator.Form1.resources
+C:\Users\user\Documents\Visual Studio 2017\Projects\Calculator\CalculatOR1\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\user\Documents\Visual Studio 2017\Projects\Calculator\CalculatOR1\obj\Debug\Calculator.csproj.GenerateResource.Cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\Calculator\CalculatOR1\obj\Debug\Calculator.exe
+C:\Users\user\Documents\Visual Studio 2017\Projects\Calculator\CalculatOR1\obj\Debug\Calculator.pdb

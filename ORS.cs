@@ -8,6 +8,11 @@ namespace Calculator
 {
     static class ORS
     {
+        /// <summary>
+        /// Get Result of Math Operation
+        /// </summary>
+        /// <param name="op">Operation that need's to calculate</param>
+        /// <returns>return's Operation with result in it</returns>
         public static Operation GetResult(Operation op)
         {
             if (Check(op))
@@ -35,11 +40,22 @@ namespace Calculator
             return op;
         }
 
+        /// <summary>
+        /// Checks can we calculate this operation
+        /// </summary>
+        /// <param name="op">Operation</param>
+        /// <returns>bool Can we or need</returns>
         private static bool Check(Operation op)
         {
             return op.FirstNum == null || op.SecondNum == null ? false : true;
         }
 
+        /// <summary>
+        /// Gets math calculation of sub operations
+        /// </summary>
+        /// <param name="i">Number</param>
+        /// <param name="sub">Type of sub operation</param>
+        /// <returns>Result of calculation</returns>
         private static double SubOperation(double i, Operation.SubOperations sub)
         {
             switch (sub) {
